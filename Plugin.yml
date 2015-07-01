@@ -1,0 +1,17 @@
+---
+name: Spectator
+version: 1.0
+api: 1.12.0
+author: TonyDroidd
+main: TDroidd\Spectator\Main
+description: Allow to player be an Spectator
+website: https://github.com/TonyDroidd/Spectator
+
+commands:
+  spectator:
+    usage: /spectator <on / off>
+    permission: player.spectate
+permissions:
+    player.spectate:
+        default: false
+        description: "Allow to set gamemode to spectato
