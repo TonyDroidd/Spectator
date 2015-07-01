@@ -1,0 +1,8 @@
+# SPECTATOR by TonyDroidd
+# Config Folder
+
+# The default gamemode of you server (For internal use)
+Default-Game-Mode: 0
+
+# Teleport player to level spawn when do /spectator off (recommendable)
+Teleport-To-Spawn: true
