@@ -14,4 +14,4 @@ commands:
 permissions:
     player.spectate:
         default: false
-        description: "Allow to set gamemode to spectato
+        description: "Allow to set gamemode to spectator
