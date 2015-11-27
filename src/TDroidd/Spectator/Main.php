@@ -21,27 +21,26 @@ class Main extends PluginBase implements Listener {
          }
         
          public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-             $cfg=$this->getConfig();
-             $defgm=$cfg->get("Default-Game-Mode");
-             $tptosp=$cfg->get("Teleport-To-Spawn");
-                if(isset($args[0])){
-                    switch($args[0]){
-                 case "on":
-            $sender->setGamemode(3);
-            $sender->sendMessage(TextFormat::GREEN . "You are now a Spectator!");
-            $this->getLogger()->info($sender->getName() . " Has changed his gamemode to Spectator");
-                return true;
-                 case "off":
-            $sender->setGamemode($defgm);
-            $sender->sendMessage(TextFormat::YELLOW . "You are no longer Espectator");
-            if($tptosp === true){
-            $sender->teleport($this->getServer()->getDefaultLevel()->getSpawn());
-            }
+             $cfg = $this->getConfig();
+             $defgm = $cfg->get("Default-Game-Mode");
+             $tptosp = $cfg->get("Teleport-To-Spawn");
+             if(isset($args[0])){
+                switch($args[0]){
+                case "on":
+	            	$sender->setGamemode(3);
+	            	$sender->sendMessage(TextFormat::GREEN . "You are now a Spectator!");
+	            	$this->getLogger()->info($sender->getName() . " Has changed his gamemode to Spectator");
+	                return true;
+                case "off":
+	           	$sender->setGamemode($defgm);
+	   		$sender->sendMessage(TextFormat::YELLOW . "You are no longer Espectator");
+            		if($tptosp === true) $sender->teleport($this->getServer()->getDefaultLevel()->getSpawn());
                     return true;
                     }
                 }
-}
-        	public function onDisable() {
-		$this->getLogger()->info("§eSpectator By §bTDroidd §av1.5 §4Unloaded!");
+                return false;
+	}
+        public function onDisable() {
+	$this->getLogger()->info("§eSpectator By §bTDroidd §av1.5 §4Unloaded!");
 	}
 }
